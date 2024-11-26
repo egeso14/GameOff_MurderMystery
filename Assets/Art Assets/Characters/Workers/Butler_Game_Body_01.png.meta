@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Butler_Game_Body_01_0: 3188661994060189766
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

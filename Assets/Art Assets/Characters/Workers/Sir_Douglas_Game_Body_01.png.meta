@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sir_Douglas_Game_Body_01_0: 3102874958927139954
+      Sir_Douglas_Game_Body_01_1: -7444952247625169900
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

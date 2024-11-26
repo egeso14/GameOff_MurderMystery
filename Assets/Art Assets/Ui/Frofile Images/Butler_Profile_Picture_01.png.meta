@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Butler_Profile_Picture_01_0: -6337327676060632745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
