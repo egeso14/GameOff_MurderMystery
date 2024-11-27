@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Chef_Profile_Picture_01_0: -5061258060985861159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
