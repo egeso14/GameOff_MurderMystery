@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2d7c3ffc-10db-4f96-b063-5d5a69986ac2}">
+		<property name="assetPath">
+			<value>WOOD CREAK-001.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.42269841269841268</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{bd062040-ae7b-4cd9-8a3d-21cff51bda2b}</destination>
+		</relationship>
+	</object>
+</objects>
