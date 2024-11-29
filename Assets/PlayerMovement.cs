@@ -1,14 +1,19 @@
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.PlayerLoop;
+using Math = Unity.Mathematics.Geometry.Math;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Vector2 xyDir;
     private bool _moving;
+    private float _moveDistance;
     
     private bool _lampOut;
     
@@ -26,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         
         movementXAction = InputSystem.actions.FindAction("MovementX");
         movementYAction = InputSystem.actions.FindAction("MovementY");
+        flashlightAction = InputSystem.actions.FindAction("Lamp");
+        
         //flashlightAction = InputSystem.actions.FindAction("")
         if (movementXAction == null || movementYAction == null)
         {
@@ -37,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
             movementYAction.performed += context => UpdateMovementState(context);
             movementXAction.canceled += context => TerminateMovementState();
             movementYAction.canceled += context => TerminateMovementState();
+            flashlightAction.performed += context => TriggerLamp();
+            
         }
     }
 
@@ -95,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
         if (!movementXAction.inProgress && !movementYAction.inProgress)
         {
             _moving = false;
+            _moveDistance = 0;
             Debug.Log("movement action canceled");
             UpdateAnimState();
         }
@@ -109,9 +119,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_moving)
         {
+            _moveDistance = math.lerp(_moveDistance, 0.2f, 0.1f);
             Vector2 currentPos = _playerRigidBody.position;
-            _playerRigidBody.MovePosition(currentPos + xyDir * 0.2f);
+            _playerRigidBody.MovePosition(currentPos + xyDir * _moveDistance);
         }
+    }
+
+    private void TriggerLamp()
+    {
+        _lampOut = !_lampOut;
+        UpdateAnimState();
     }
 
 

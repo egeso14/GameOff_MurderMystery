@@ -44,6 +44,24 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Lamp"",
+                    ""type"": ""Button"",
+                    ""id"": ""664cc064-aec1-4064-aa2a-5e736aa6075b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Value"",
+                    ""id"": ""07935fd5-11ef-48de-a6e4-1fbbee4bc45f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -112,6 +130,39 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e26a9ba-5a0d-418f-a89e-bfb7eac01ae6"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lamp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b3c7645e-8480-46d7-bbee-6c53c9a27cff"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""041a2ad2-a464-45b4-8096-8fa7bf00737d"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +173,8 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_DefaultMap = asset.FindActionMap("DefaultMap", throwIfNotFound: true);
         m_DefaultMap_MovementX = m_DefaultMap.FindAction("MovementX", throwIfNotFound: true);
         m_DefaultMap_MovementY = m_DefaultMap.FindAction("MovementY", throwIfNotFound: true);
+        m_DefaultMap_Lamp = m_DefaultMap.FindAction("Lamp", throwIfNotFound: true);
+        m_DefaultMap_Click = m_DefaultMap.FindAction("Click", throwIfNotFound: true);
     }
 
     ~@NewControls()
@@ -190,12 +243,16 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private List<IDefaultMapActions> m_DefaultMapActionsCallbackInterfaces = new List<IDefaultMapActions>();
     private readonly InputAction m_DefaultMap_MovementX;
     private readonly InputAction m_DefaultMap_MovementY;
+    private readonly InputAction m_DefaultMap_Lamp;
+    private readonly InputAction m_DefaultMap_Click;
     public struct DefaultMapActions
     {
         private @NewControls m_Wrapper;
         public DefaultMapActions(@NewControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @MovementX => m_Wrapper.m_DefaultMap_MovementX;
         public InputAction @MovementY => m_Wrapper.m_DefaultMap_MovementY;
+        public InputAction @Lamp => m_Wrapper.m_DefaultMap_Lamp;
+        public InputAction @Click => m_Wrapper.m_DefaultMap_Click;
         public InputActionMap Get() { return m_Wrapper.m_DefaultMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -211,6 +268,12 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @MovementY.started += instance.OnMovementY;
             @MovementY.performed += instance.OnMovementY;
             @MovementY.canceled += instance.OnMovementY;
+            @Lamp.started += instance.OnLamp;
+            @Lamp.performed += instance.OnLamp;
+            @Lamp.canceled += instance.OnLamp;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
         }
 
         private void UnregisterCallbacks(IDefaultMapActions instance)
@@ -221,6 +284,12 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @MovementY.started -= instance.OnMovementY;
             @MovementY.performed -= instance.OnMovementY;
             @MovementY.canceled -= instance.OnMovementY;
+            @Lamp.started -= instance.OnLamp;
+            @Lamp.performed -= instance.OnLamp;
+            @Lamp.canceled -= instance.OnLamp;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
         }
 
         public void RemoveCallbacks(IDefaultMapActions instance)
@@ -242,5 +311,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     {
         void OnMovementX(InputAction.CallbackContext context);
         void OnMovementY(InputAction.CallbackContext context);
+        void OnLamp(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }
