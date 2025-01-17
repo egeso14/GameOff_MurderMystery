@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Color_BackGround_Dialogue_Ui_01-export_0: 8973621982101729073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

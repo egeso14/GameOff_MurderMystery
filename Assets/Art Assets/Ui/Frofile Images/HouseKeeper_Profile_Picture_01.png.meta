@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HouseKeeper_Profile_Picture_01_0: 4595450156106904072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

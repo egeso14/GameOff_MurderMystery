@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Chef_Game_Body_01_0: -6204878854455357260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - CustomLightLayer
-  - 
-  - 
-  - 
+  - FlashlightEffects
+  - Characters
+  - Background and objects
+  - Lights
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Flashlight
     uniqueID: 1357925755
+    locked: 0
+  - name: CameraSortingLayer
+    uniqueID: 1465190679
     locked: 0
   m_RenderingLayers:
   - Default

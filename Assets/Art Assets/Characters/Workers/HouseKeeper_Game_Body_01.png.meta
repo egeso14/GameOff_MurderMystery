@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HouseKeeper_Game_Body_01_0: 5269259378314428622
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
