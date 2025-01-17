@@ -4,7 +4,7 @@ using UnityEngine.InputSystem.LowLevel;
 public class CursorManager : MonoBehaviour
 {
     public Camera mainCamera;
-    private Interactable _hoverObject;
+    private GameObject _hoverObject;
     private Texture2D _lastHoverTexture;
     [SerializeField] private Texture2D _baseHoverTexture;
     
@@ -24,7 +24,7 @@ public class CursorManager : MonoBehaviour
     void FixedUpdate()
     {
         FindHoverObject();
-        GetCursor();
+        AskForCursorTexture();
         SetCustomCursor();
     }
 
@@ -44,20 +44,14 @@ public class CursorManager : MonoBehaviour
                 _hoverObject = null;
 
             }
-            _hoverObject = hitCollider.gameObject.GetComponent<Interactable>();
+
+            _hoverObject = hitCollider.gameObject;
         }
     }
 
-    private void GetCursor()
+    private void AskForCursorTexture()
     {
-        if (_hoverObject == null)
-        {
-            _lastHoverTexture = _baseHoverTexture;
-        }
-        else
-        {
-            _lastHoverTexture = _hoverObject.GetMouseHoverTexture();
-        }
+        
     }
 
     private void SetCustomCursor()

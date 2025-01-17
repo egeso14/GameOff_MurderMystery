@@ -1,16 +1,26 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Interactable : MonoBehaviour
+public abstract class Interactable: MonoBehaviour
 {
-    [SerializeField] protected Texture2D mouseHoverTexture;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Dictionary<InteractionInput, InteractionResponse> myInteractions { get; set; }
+    
+    public InteractionResponse Response(InteractionInput res)
+    {
+        if (myInteractions.ContainsKey(res))
+        {
+            return myInteractions[res];
+        }
 
-    public void SetMouseHoverTexture(Texture2D texture)
-    {
-        mouseHoverTexture = texture;
+        return InteractionResponse.NoResponse;
     }
-    public Texture2D GetMouseHoverTexture()
+
+    public PlayerInteractionCategory Respond(InteractionInput input, InteractionManager manager)
     {
-        return mouseHoverTexture;
+        return PlayerInteractionCategory.None;
     }
+    
+    
+
+
 }
