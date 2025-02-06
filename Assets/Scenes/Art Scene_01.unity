@@ -119110,10 +119110,11 @@ GameObject:
   - component: {fileID: 432512136}
   - component: {fileID: 432512135}
   - component: {fileID: 432512134}
-  - component: {fileID: 432512137}
   - component: {fileID: 432512139}
   - component: {fileID: 432512138}
   - component: {fileID: 432512140}
+  - component: {fileID: 432512141}
+  - component: {fileID: 432512142}
   m_Layer: 7
   m_Name: Detective
   m_TagString: Untagged
@@ -119213,21 +119214,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &432512137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432512133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d30100a5de74092bcf395cc518015b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerAnimator: {fileID: 432512134}
-  _playerSprite: {fileID: 432512135}
-  _playerRigidBody: {fileID: 432512140}
 --- !u!70 &432512138
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -119330,6 +119316,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &432512141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432512133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9878f1b6a37395444947696799dce2e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &432512142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432512133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6b5d34c046a2146b37c7e71bbc9d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &456242102
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,8 @@
 {
-    "name": "New Controls",
+    "name": "DefaultActionaSSET",
     "maps": [
         {
-            "name": "DefaultMap",
+            "name": "DefaultInputActionMap",
             "id": "e8b17dd7-a974-4b25-9755-6f35366d01a0",
             "actions": [
                 {
@@ -36,9 +36,18 @@
                     "name": "Click",
                     "type": "Value",
                     "id": "07935fd5-11ef-48de-a6e4-1fbbee4bc45f",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Movement",
+                    "type": "Button",
+                    "id": "76c9f31d-e510-40c7-be8b-d992ec80ba31",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold",
                     "initialStateCheck": true
                 }
             ],
@@ -139,6 +148,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ebcc79ae-4b36-449d-9b39-139f559a95b7",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "Scale",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3948f11-58f7-4d7f-9f7b-b3f5744ea827",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "Scale(factor=2)",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba4a84c0-8744-41b9-85ec-e61e80705315",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "Scale(factor=3)",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10455987-3eb5-43c1-8852-982eb2b846c8",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "Scale(factor=4)",
+                    "groups": "",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
